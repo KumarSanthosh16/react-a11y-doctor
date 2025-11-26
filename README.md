@@ -1,5 +1,6 @@
-[![npm version](https://img.shields.io/badge/npm_version-v1.0.0-brightgreen?style=for-the-badge)]
-[![license](https://img.shields.io/badge/license-Apache-2.0-brightgreen?style=for-the-badge)]
+![npm version](https://img.shields.io/badge/npm_version-v1.0.0-brightgreen?style=for-the-badge)
+![license](https://img.shields.io/badge/license-Apache_2.0-orange?style=for-the-badge)
+![Github](https://img.shields.io/badge/github-repo-blue?logo=github)
 
 
 # react-a11y-doctor 🩺
