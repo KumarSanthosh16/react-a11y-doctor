@@ -96,3 +96,7 @@ Santhoshkumar Ragunathan
 [LinkedIn](https://www.linkedin.com/in/santhoshkumar-ragunathan-753067244/) | [GitHub](https://github.com/KumarSanthosh16) | [Portfolio](https://www.consoledotlog.in)
 
 ---
+
+**Developed in 🇮🇳 with ❤️**
+
+Feel free to contribute!
