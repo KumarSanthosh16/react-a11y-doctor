@@ -1,0 +1,36 @@
+{
+  "name": "react-a11y-doctor",
+  "version": "1.0.0",
+  "description": "Automatic accessibility fixer for React (JSX/TSX) that analyzes your source code and patches missing accessibility attributes.",
+  "main": "dist/index.js",
+  "bin": {
+    "react-a11y-doctor": "./bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "react",
+    "a11y",
+    "accessibility",
+    "cli",
+    "autofix",
+    "jsx",
+    "tsx",
+    "babel"
+  ],
+  "author": "Santhoshkumar",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@babel/generator": "^7.28.5",
+    "@babel/parser": "^7.28.5",
+    "@babel/traverse": "^7.28.5",
+    "@babel/types": "^7.28.5",
+    "prettier": "^3.6.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
