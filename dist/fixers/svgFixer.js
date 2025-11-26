@@ -8,7 +8,6 @@ export function fixSvg(tag, path) {
     if (hasTitle)
         return;
     const label = guessLabel(path);
-    // Create <title>label</title>
     const title = t.jsxElement(t.jsxOpeningElement(t.jsxIdentifier("title"), []), t.jsxClosingElement(t.jsxIdentifier("title")), [t.jsxText(label)]);
     parent.children.unshift(title);
 }

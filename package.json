@@ -1,36 +1,54 @@
 {
   "name": "react-a11y-doctor",
   "version": "1.0.0",
-  "description": "Automatic accessibility fixer for React (JSX/TSX) that analyzes your source code and patches missing accessibility attributes.",
+  "description": "Automated accessibility fixes for React projects. Scans JSX/TSX and build output HTML to auto-fix missing alt, aria-label, role, tabIndex, SVG title and more.",
+  "type": "module",
   "main": "dist/index.js",
   "bin": {
     "react-a11y-doctor": "./bin/cli.js"
   },
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "react",
     "a11y",
     "accessibility",
-    "cli",
-    "autofix",
-    "jsx",
-    "tsx",
-    "babel"
+    "alt-text",
+    "aria-label",
+    "automatic-fix",
+    "eslint",
+    "prettier",
+    "wcag",
+    "wcag-compliance",
+    "reactjs",
+    "nextjs",
+    "vite",
+    "astro",
+    "remix",
+    "typescript"
   ],
-  "author": "Santhoshkumar",
-  "license": "MIT",
-  "type": "module",
+  "author": "Santhoshkumar Ragunathan",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KumarSanthosh16/react-a11y-doctor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KumarSanthosh16/react-a11y-doctor/issues"
+  },
+  "homepage": "https://github.com/KumarSanthosh16/react-a11y-doctor#readme",
   "dependencies": {
     "@babel/generator": "^7.28.5",
     "@babel/parser": "^7.28.5",
     "@babel/traverse": "^7.28.5",
     "@babel/types": "^7.28.5",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "cheerio": "^1.0.0"
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
     "typescript": "^5.9.3"
   }
 }

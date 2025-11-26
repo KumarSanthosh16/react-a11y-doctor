@@ -1,39 +1,94 @@
-# react-a11y-doctor
+[![npm version](https://img.shields.io/badge/npm_version-v1.0.0-brightgreen?style=for-the-badge)]
+[![license](https://img.shields.io/badge/license-Apache-2.0-brightgreen?style=for-the-badge)]
 
-Automatic **accessibility fixer** for React (JSX / TSX).  
-It analyzes your React source code and automatically **adds or fixes missing accessibility attributes**.
 
-No warnings.  
-No lists of errors.  
-It **directly fixes** your code.
+# react-a11y-doctor 🩺
 
----
+### Automated Accessibility Fixes for React & Next.js Projects
 
-## 🚀 Features
-
-### ✔ Auto-add missing accessibility attributes
-- `alt=""` for images  
-- `aria-label=""` for buttons  
-- `role="button"` for clickable `div`/`span`  
-- `tabIndex={0}` for interactive non-button elements  
-- Generate `<title>` for SVG icons  
-- Auto-generate `htmlFor=""` for labels  
-- Warn about incorrect heading structure  
+`react-a11y-doctor` scans React source (`.js/.jsx/.ts/.tsx`) and built output HTML
+and automatically fixes common accessibility problems, instead of just reporting them.
 
 ---
 
-## 🔍 Smart Guessing Engine
+## ✨ Features
 
-When generating labels:
-
-- If button has visible text → use it  
-- If button has only icons → use component name (e.g., `DeleteIcon`)  
-- For images → use filename (e.g., `login-bg.png` → `"Login bg"`)  
-- If nothing found → fallback to `"interactive element"`  
+| Fix | Example |
+|------|---------|
+| Missing alt text | `<img src="foo.png">` → `<img src="foo.png" alt="foo">` |
+| Missing aria-label | `<button><Icon/></button>` → `aria-label="delete"` |
+| Clickable divs | `<div onClick>` → `role="button" tabIndex="0" aria-label="Open"` |
+| Missing `<svg><title>` | Adds `<title>` intelligently |
+| Heading order warnings | Detects jumps (ex: h1 → h4) |
 
 ---
 
-## 📦 Installation
+## 🧪 Example
 
-```sh
-npm install -g react-a11y-doctor
+**Before**
+```jsx
+<button><DeleteIcon /></button>
+<img src="/img/user.png" />
+<div onClick={open}>Edit</div>
+```
+
+**After**
+```jsx
+<button aria-label="delete"><DeleteIcon /></button>
+<img src="/img/user.png" alt="user" />
+<div onClick={open} role="button" tabIndex="0" aria-label="Edit">Edit</div>
+```
+Formatted with Prettier automatically.
+
+---
+
+**🚀 Install**
+
+```bash
+npm install react-a11y-doctor --save-dev
+```
+---
+
+**🔧 Commands**
+
+| Command | Description |
+|------|---------|
+| `react-a11y-doctor fix src` | Fix JSX/TSX files inside src |
+| `react-a11y-doctor auto` | Detect and fix source + built HTML automatically |
+
+---
+
+**🏗 Build integration**
+
+**Next.js**
+```json
+"scripts": {
+  "build": "react-a11y-doctor fix src && next build && react-a11y-doctor auto"
+}
+```
+
+**Vite / CRA / Astro / Remix**
+```json
+"build": "react-a11y-doctor fix src && vite build && react-a11y-doctor auto"
+```
+
+---
+
+**🧂 Supports**
+ - React 18 / 19
+ - Next.js (App & Pages router)
+ - Vite / CRA / Remix / Astro
+ - TypeScript + JSX
+
+---
+
+**📝 License**
+Apache-2.0
+
+---
+
+**👤 Author**
+Santhoshkumar Ragunathan
+[LinkedIn](https://www.linkedin.com/in/santhoshkumar-ragunathan-753067244/) | [GitHub](https://github.com/KumarSanthosh16) | [Portfolio](https://www.consoledotlog.in)
+
+---

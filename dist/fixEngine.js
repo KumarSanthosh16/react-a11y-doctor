@@ -28,7 +28,6 @@ export function fixEngine(code) {
             fixSvg(tag, path);
         }
     });
-    // Run heading order analysis (warnings printed)
     analyzeHeadingOrder(ast);
     return generate(ast).code;
 }
